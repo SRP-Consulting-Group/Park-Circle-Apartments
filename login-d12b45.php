@@ -51,7 +51,7 @@
         else {
             unset($_SESSION['user_redirect_attempt']);
             $homeURL = 'user-dashboard.php';
-            $homeURLs = array();
+            $homeURLs = array('0' => 'user-dashboard.php', '1' => 'user-dashboard.php');
             foreach($_SESSION['user_groups'] as $group) {
                 if(isset($homeURLs[$group])) {
                     $homeURL = $homeURLs[$group];
@@ -62,5 +62,5 @@
         }
     }
     else {
-        header('Location: user-login.php?err=99');
+        header('Location: user-login.html?err=99');
     }
